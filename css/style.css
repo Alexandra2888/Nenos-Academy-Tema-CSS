@@ -1,0 +1,268 @@
+/*variables*/
+
+/*reset*/
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh;
+}
+
+/*variables*/
+:root {
+    --var-height: 5rem;
+
+    --var-margin: 5em 2.5em 5em 2.5em;
+
+    --var-clr-blue: #0000ff;
+    --var--clr-green: #008000;
+    --var-clr-white: #ffffff;
+    --var--clr-lime: #adff2f;
+    --var--clr-aqua: #7fffd4;
+    --var--clr-gray: #808080;
+    --var--clr-red: #ff0000;
+    --var--clr-brown: #a52a2a;
+    --var--clr-yellow: #ffff00;
+    --var--clr-purple: #800080;
+    --var--clr-black: #000000;
+}
+
+header {
+    height: var(--var-height);
+    width: auto;
+    background-color: var(--var-clr-blue);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px 0 15px;
+}
+
+header > span:first-child {
+    background-color: var(--var--clr-green);
+    width: 2rem;
+    height: 2rem;
+}
+
+header > span:first-child:hover {
+    background-color: var(--var--clr-purple);
+}
+
+header > span:last-child {
+    background-color: var(--var-clr-white);
+    width: 2rem;
+    height: 2rem;
+}
+
+header > span:last-child:hover {
+    background-color: var(--var--clr-yellow);
+}
+
+section {
+    margin: 2em;
+    display: flex;
+    justify-content: space-between;
+}
+
+#firstContainer,
+#secondContainer {
+    background-color: var(--var--clr-lime);
+    width: calc(50% - 1em);
+    height: 40rem;
+    display: flex;
+    margin: 1em;
+}
+
+.firstContainer__child1 {
+    background-color: var(--var--clr-aqua);
+    width: calc(50% - 1em);
+    height: 30rem;
+    margin: var(--var-margin);
+}
+
+.firstContainer__child2 {
+    background-color: var(--var--clr-gray);
+    width: calc(50% - 1em);
+    height: 30rem;
+    margin: var(--var-margin);
+}
+
+#secondContainer {
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 1em 0 1em;
+}
+
+#secondContainer > div:first-child {
+    background-color: var(--var--clr-red);
+    height: 100px;
+    margin-top: 1em;
+}
+
+#secondContainer > div:nth-child(2) {
+    background-color: var(--var--clr-brown);
+    height: 100px;
+}
+
+#secondContainer > div:nth-child(3) {
+    background-color: var(--var--clr-yellow);
+    height: 100px;
+}
+
+#secondContainer > div:nth-child(4) {
+    background-color: var(--var--clr-aqua);
+    height: 100px;
+}
+
+#secondContainer > div:nth-child(5) {
+    background-color: var(--var--clr-purple);
+    height: 100px;
+    margin-bottom: 1em;
+}
+
+.balls {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2em 0 2em 0;
+}
+
+.ball1,
+.ball2,
+.ball3,
+.ball4 {
+    border-radius: 100%;
+    width: 150px;
+    height: 150px;
+}
+
+
+.ball1 {
+    background-color: var(--var--clr-green);
+    animation: bounce 1s ease-in-out infinite;
+    animation-fill-mode: both;
+    animation-direction: alternate;
+}
+
+.ball2 {
+    background-color: var(--var-clr-blue);
+    position: relative;
+    animation: jump-down 0.6s linear infinite alternate;
+}
+
+.ball3 {
+    background-color: var(--var--clr-purple);
+    position: relative;
+    animation: jump-up 0.6s linear infinite alternate;
+}
+
+.ball4 {
+    background-color: var(--var--clr-red);
+    animation: change-color 2s infinite;
+}
+
+footer {
+    background-color: var(--var--clr-black);
+    height: var(--var-height);
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+
+/*keyframes*/
+@keyframes bounce {
+    from {
+        top: 25%;
+        transform: scaleX(79.5%) scaleY(65%);
+    }
+    to {
+        top: 55%;
+    }
+}
+
+@keyframes jump-down {
+    0% {
+        top: 0%;
+    }
+    10% {
+        top: 1%;
+    }
+    20% {
+        top: 4%;
+    }
+    30% {
+        top: 9%;
+    }
+    40% {
+        top: 16%;
+    }
+    50% {
+        top: 25%;
+    }
+    60% {
+        top: 36%;
+    }
+    70% {
+        top: 49%;
+    }
+    80% {
+        top: 64%;
+    }
+    90% {
+        top: 81%;
+    }
+    100% {
+        top: 100%;
+    }
+}
+
+
+@keyframes jump-up {
+    0% {
+        top: 0%;
+    }
+    10% {
+        top: -1%;
+    }
+    20% {
+        top: -4%;
+    }
+    30% {
+        top: -9%;
+    }
+    40% {
+        top: -16%;
+    }
+    50% {
+        top: -30%;
+    }
+    60% {
+        top: -16%;
+    }
+    70% {
+        top: -9%;
+    }
+    80% {
+        top: -4%;
+    }
+    90% {
+        top: -1%;
+    }
+    100% {
+        top: 0%;
+    }
+
+}
+
+
+@keyframes change-color {
+    from {
+      background-color: var(--var--clr-red);
+    }
+    to {
+      background-color:cadetblue;
+    }
+  }
